@@ -7,14 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F5261D861FF29D4900CFD0D6 /* Garden.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5261D851FF29D4900CFD0D6 /* Garden.swift */; };
+		F5261D881FF29D6600CFD0D6 /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5261D871FF29D6600CFD0D6 /* Plant.swift */; };
 		F52BDF8B1FF27A2E00ABD362 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52BDF8A1FF27A2E00ABD362 /* AppDelegate.swift */; };
 		F52BDF8D1FF27A2E00ABD362 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52BDF8C1FF27A2E00ABD362 /* ViewController.swift */; };
 		F52BDF901FF27A2E00ABD362 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F52BDF8E1FF27A2E00ABD362 /* Main.storyboard */; };
 		F52BDF921FF27A2E00ABD362 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F52BDF911FF27A2E00ABD362 /* Assets.xcassets */; };
 		F52BDF951FF27A2E00ABD362 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F52BDF931FF27A2E00ABD362 /* LaunchScreen.storyboard */; };
+		F53E2C881FFBAAB700F52A9F /* GardensViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53E2C871FFBAAB700F52A9F /* GardensViewController.swift */; };
+		F53E2C8A1FFBB0A900F52A9F /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53E2C891FFBB0A900F52A9F /* Task.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F5261D851FF29D4900CFD0D6 /* Garden.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Garden.swift; sourceTree = "<group>"; };
+		F5261D871FF29D6600CFD0D6 /* Plant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
 		F52BDF871FF27A2E00ABD362 /* Gardener.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gardener.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F52BDF8A1FF27A2E00ABD362 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F52BDF8C1FF27A2E00ABD362 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +28,8 @@
 		F52BDF911FF27A2E00ABD362 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F52BDF941FF27A2E00ABD362 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F52BDF961FF27A2E00ABD362 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F53E2C871FFBAAB700F52A9F /* GardensViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardensViewController.swift; sourceTree = "<group>"; };
+		F53E2C891FFBB0A900F52A9F /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +43,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F5261D821FF298F600CFD0D6 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F53E2C871FFBAAB700F52A9F /* GardensViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F5261D831FF298FA00CFD0D6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F5261D841FF298FF00CFD0D6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F5261D851FF29D4900CFD0D6 /* Garden.swift */,
+				F5261D871FF29D6600CFD0D6 /* Plant.swift */,
+				F53E2C891FFBB0A900F52A9F /* Task.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		F52BDF7E1FF27A2E00ABD362 = {
 			isa = PBXGroup;
 			children = (
@@ -54,6 +87,9 @@
 		F52BDF891FF27A2E00ABD362 /* Gardener */ = {
 			isa = PBXGroup;
 			children = (
+				F5261D841FF298FF00CFD0D6 /* Model */,
+				F5261D831FF298FA00CFD0D6 /* Views */,
+				F5261D821FF298F600CFD0D6 /* ViewControllers */,
 				F52BDF8A1FF27A2E00ABD362 /* AppDelegate.swift */,
 				F52BDF8C1FF27A2E00ABD362 /* ViewController.swift */,
 				F52BDF8E1FF27A2E00ABD362 /* Main.storyboard */,
@@ -136,7 +172,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F53E2C881FFBAAB700F52A9F /* GardensViewController.swift in Sources */,
+				F5261D861FF29D4900CFD0D6 /* Garden.swift in Sources */,
+				F5261D881FF29D6600CFD0D6 /* Plant.swift in Sources */,
 				F52BDF8D1FF27A2E00ABD362 /* ViewController.swift in Sources */,
+				F53E2C8A1FFBB0A900F52A9F /* Task.swift in Sources */,
 				F52BDF8B1FF27A2E00ABD362 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
