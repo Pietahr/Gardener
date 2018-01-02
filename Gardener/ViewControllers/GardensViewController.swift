@@ -6,11 +6,15 @@
 import Foundation
 import UIKit
 
-class GardensViewController: UITableViewController {
+class GardensViewController: UIViewController {
+    
+    @IBOutlet weak var tableView: UITableView!
     
     var gardens: [Garden] = []
     var plants: [Plant] = []
     var tasks: [Task] = []
+    
+    private var indexPathToEdit: IndexPath!
     
     override func viewDidLoad() {
         
@@ -24,13 +28,14 @@ class GardensViewController: UITableViewController {
         for i in 0...2{
             gardens[i].plants.append(plants[i])
         }
+
     }
     
     func generateData(){
         gardens = [
-            Garden(ownerName: "Jansens",location: "Aalst"),
-            Garden(ownerName: "Dedecker",location: "Lochristi"),
-            Garden(ownerName: "Appelmans",location: "Brussel")
+            Garden(ownerName: "Jansens",location: "Gijzegem-Dorp Aalst"),
+            Garden(ownerName: "Dedecker",location: "Straat Lochristi"),
+            Garden(ownerName: "Appelmans",location: "Straat Brussel")
         ]
         
         plants = [
@@ -51,5 +56,47 @@ class GardensViewController: UITableViewController {
             Task(description: "Beperk de lengte van de ranken tot 40-50 cm: snoei de vruchtbare twijgen op ongeveer twee bladeren na de laatste druif.", months: [5,6,7,8,9], type: Task.TaskType.prune),
             Task(description: "Snij de takken met enkele centimeters af, waarbij u de afgeronde vorm van de stuik respecteert.", months: [3,4], type: Task.TaskType.prune)
         ]
+        
+        print("Generated data")
+    }
+}
+
+/**
+ Extensions can add new initializers to existing types. This enables you to extend other types to accept your own custom types as initializer parameters, or to provide additional initialization options that were not included as part of the type’s original implementation.
+ */
+extension GardensViewController: UITableViewDelegate {
+    // voor elke rij, welke swipe action moet ik tonen
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let editAction = UIContextualAction(style: .normal ,title: "Edit"){
+            (action, view, completionHandler) in
+            self.indexPathToEdit = indexPath
+            self.performSegue(withIdentifier: "editProject", sender: self)
+            completionHandler(true)
+        }
+        editAction.backgroundColor = UIColor.orange
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete"){
+            (action,view,competionHandler) in
+            self.gardens.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            competionHandler(true)
+        }
+        return UISwipeActionsConfiguration(actions: [deleteAction, editAction])
+    }
+}
+
+extension GardensViewController: UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return gardens.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "gardenCell", for: indexPath) as! GardenCell
+        cell.garden = gardens[indexPath.row]
+        return cell
     }
 }
