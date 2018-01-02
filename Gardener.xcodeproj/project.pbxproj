@@ -17,6 +17,7 @@
 		F53E2C881FFBAAB700F52A9F /* GardensViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53E2C871FFBAAB700F52A9F /* GardensViewController.swift */; };
 		F53E2C8A1FFBB0A900F52A9F /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53E2C891FFBB0A900F52A9F /* Task.swift */; };
 		F53E2C8C1FFBE12D00F52A9F /* GardenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53E2C8B1FFBE12D00F52A9F /* GardenCell.swift */; };
+		F53E2C8E1FFC1CEA00F52A9F /* AddGardenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53E2C8D1FFC1CEA00F52A9F /* AddGardenViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		F53E2C871FFBAAB700F52A9F /* GardensViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardensViewController.swift; sourceTree = "<group>"; };
 		F53E2C891FFBB0A900F52A9F /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		F53E2C8B1FFBE12D00F52A9F /* GardenCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenCell.swift; sourceTree = "<group>"; };
+		F53E2C8D1FFC1CEA00F52A9F /* AddGardenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGardenViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +51,7 @@
 			isa = PBXGroup;
 			children = (
 				F53E2C871FFBAAB700F52A9F /* GardensViewController.swift */,
+				F53E2C8D1FFC1CEA00F52A9F /* AddGardenViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F53E2C881FFBAAB700F52A9F /* GardensViewController.swift in Sources */,
+				F53E2C8E1FFC1CEA00F52A9F /* AddGardenViewController.swift in Sources */,
 				F5261D861FF29D4900CFD0D6 /* Garden.swift in Sources */,
 				F5261D881FF29D6600CFD0D6 /* Plant.swift in Sources */,
 				F52BDF8D1FF27A2E00ABD362 /* ViewController.swift in Sources */,

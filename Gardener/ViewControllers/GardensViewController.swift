@@ -66,11 +66,12 @@ class GardensViewController: UIViewController {
  */
 extension GardensViewController: UITableViewDelegate {
     // voor elke rij, welke swipe action moet ik tonen
+    // Source: Tasks on Chamilo
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let editAction = UIContextualAction(style: .normal ,title: "Edit"){
             (action, view, completionHandler) in
             self.indexPathToEdit = indexPath
-            self.performSegue(withIdentifier: "editProject", sender: self)
+            self.performSegue(withIdentifier: "editGarden", sender: self)
             completionHandler(true)
         }
         editAction.backgroundColor = UIColor.orange
