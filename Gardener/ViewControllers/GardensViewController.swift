@@ -16,6 +16,36 @@ class GardensViewController: UIViewController {
     
     private var indexPathToEdit: IndexPath!
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch  segue.identifier {
+        case "addGarden"?:
+            break
+        case "editGarden"?:
+            let addGardenViewController = segue.destination as! AddGardenViewController
+            addGardenViewController.garden = gardens[indexPathToEdit.row]
+        case "showTasks"?:
+            let tasksViewController = ((segue.destination as! UITabBarController).viewControllers![0] as! UINavigationController).viewControllers[0] as! TasksViewController
+            let selection = tableView.indexPathForSelectedRow!
+            tasksViewController.garden = gardens[selection.row]
+            tableView.deselectRow(at: selection, animated: true)
+        default:
+            fatalError("Unknown segue")
+        }
+    }
+
+    @IBAction func unwindFromAddProject(_ segue: UIStoryboardSegue) {
+        switch segue.identifier {
+        case "didAddGarden"?:
+            let addGardenViewController = segue.source as! AddGardenViewController
+            gardens.append(addGardenViewController.garden!)
+            tableView.insertRows(at: [IndexPath(row: gardens.count - 1, section: 0)], with: .automatic)
+        case "didEditGarden"?:
+            tableView.reloadRows(at: [indexPathToEdit], with: .automatic)
+        default:
+            fatalError("Unkown segue")
+        }
+    }
+    
     override func viewDidLoad() {
         
         generateData()

@@ -20,6 +20,7 @@
 		F53E2C8C1FFBE12D00F52A9F /* GardenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53E2C8B1FFBE12D00F52A9F /* GardenCell.swift */; };
 		F53E2C8E1FFC1CEA00F52A9F /* AddGardenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53E2C8D1FFC1CEA00F52A9F /* AddGardenViewController.swift */; };
 		F53E2C901FFCF6B600F52A9F /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53E2C8F1FFCF6B600F52A9F /* TaskCell.swift */; };
+		F53E2C961FFD164B00F52A9F /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53E2C951FFD164B00F52A9F /* TasksViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		F53E2C8B1FFBE12D00F52A9F /* GardenCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenCell.swift; sourceTree = "<group>"; };
 		F53E2C8D1FFC1CEA00F52A9F /* AddGardenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGardenViewController.swift; sourceTree = "<group>"; };
 		F53E2C8F1FFCF6B600F52A9F /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
+		F53E2C951FFD164B00F52A9F /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 			children = (
 				F53E2C871FFBAAB700F52A9F /* GardensViewController.swift */,
 				F53E2C8D1FFC1CEA00F52A9F /* AddGardenViewController.swift */,
+				F53E2C951FFD164B00F52A9F /* TasksViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 				F52BDF8D1FF27A2E00ABD362 /* ViewController.swift in Sources */,
 				F53E2C8A1FFBB0A900F52A9F /* Task.swift in Sources */,
 				F53E2C8C1FFBE12D00F52A9F /* GardenCell.swift in Sources */,
+				F53E2C961FFD164B00F52A9F /* TasksViewController.swift in Sources */,
 				F53E2C901FFCF6B600F52A9F /* TaskCell.swift in Sources */,
 				F52BDF8B1FF27A2E00ABD362 /* AppDelegate.swift in Sources */,
 			);
