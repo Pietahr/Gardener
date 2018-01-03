@@ -57,16 +57,15 @@ class GardensViewController: UIViewController {
             Task(description: "Snij de takken met enkele centimeters af, waarbij u de afgeronde vorm van de stuik respecteert.", months: [3,4], type: Task.TaskType.prune)
         ]
         
-        print("Generated data")
     }
 }
 
 /**
  Extensions can add new initializers to existing types. This enables you to extend other types to accept your own custom types as initializer parameters, or to provide additional initialization options that were not included as part of the type’s original implementation.
  */
+// Source: Tasks on Chamilo
 extension GardensViewController: UITableViewDelegate {
     // voor elke rij, welke swipe action moet ik tonen
-    // Source: Tasks on Chamilo
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let editAction = UIContextualAction(style: .normal ,title: "Edit"){
             (action, view, completionHandler) in
