@@ -15,12 +15,15 @@
 		F52BDF901FF27A2E00ABD362 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F52BDF8E1FF27A2E00ABD362 /* Main.storyboard */; };
 		F52BDF921FF27A2E00ABD362 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F52BDF911FF27A2E00ABD362 /* Assets.xcassets */; };
 		F52BDF951FF27A2E00ABD362 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F52BDF931FF27A2E00ABD362 /* LaunchScreen.storyboard */; };
+		F53BF8361FFE5AE500E30BAE /* MonthNameHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53BF8351FFE5AE500E30BAE /* MonthNameHeader.swift */; };
 		F53E2C881FFBAAB700F52A9F /* GardensViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53E2C871FFBAAB700F52A9F /* GardensViewController.swift */; };
 		F53E2C8A1FFBB0A900F52A9F /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53E2C891FFBB0A900F52A9F /* Task.swift */; };
 		F53E2C8C1FFBE12D00F52A9F /* GardenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53E2C8B1FFBE12D00F52A9F /* GardenCell.swift */; };
 		F53E2C8E1FFC1CEA00F52A9F /* AddGardenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53E2C8D1FFC1CEA00F52A9F /* AddGardenViewController.swift */; };
 		F53E2C901FFCF6B600F52A9F /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53E2C8F1FFCF6B600F52A9F /* TaskCell.swift */; };
 		F53E2C961FFD164B00F52A9F /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53E2C951FFD164B00F52A9F /* TasksViewController.swift */; };
+		F53E2C9C1FFE468300F52A9F /* MyPlantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53E2C9B1FFE468300F52A9F /* MyPlantsViewController.swift */; };
+		F53E2C9E1FFE4BF700F52A9F /* PlantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53E2C9D1FFE4BF700F52A9F /* PlantCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,12 +39,15 @@
 		F52BDF911FF27A2E00ABD362 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F52BDF941FF27A2E00ABD362 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F52BDF961FF27A2E00ABD362 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F53BF8351FFE5AE500E30BAE /* MonthNameHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthNameHeader.swift; sourceTree = "<group>"; };
 		F53E2C871FFBAAB700F52A9F /* GardensViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardensViewController.swift; sourceTree = "<group>"; };
 		F53E2C891FFBB0A900F52A9F /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		F53E2C8B1FFBE12D00F52A9F /* GardenCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenCell.swift; sourceTree = "<group>"; };
 		F53E2C8D1FFC1CEA00F52A9F /* AddGardenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGardenViewController.swift; sourceTree = "<group>"; };
 		F53E2C8F1FFCF6B600F52A9F /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		F53E2C951FFD164B00F52A9F /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
+		F53E2C9B1FFE468300F52A9F /* MyPlantsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlantsViewController.swift; sourceTree = "<group>"; };
+		F53E2C9D1FFE4BF700F52A9F /* PlantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +85,7 @@
 				F53E2C871FFBAAB700F52A9F /* GardensViewController.swift */,
 				F53E2C8D1FFC1CEA00F52A9F /* AddGardenViewController.swift */,
 				F53E2C951FFD164B00F52A9F /* TasksViewController.swift */,
+				F53E2C9B1FFE468300F52A9F /* MyPlantsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -88,6 +95,8 @@
 			children = (
 				F53E2C8B1FFBE12D00F52A9F /* GardenCell.swift */,
 				F53E2C8F1FFCF6B600F52A9F /* TaskCell.swift */,
+				F53E2C9D1FFE4BF700F52A9F /* PlantCell.swift */,
+				F53BF8351FFE5AE500E30BAE /* MonthNameHeader.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -270,11 +279,14 @@
 				F5261D861FF29D4900CFD0D6 /* Garden.swift in Sources */,
 				F5261D881FF29D6600CFD0D6 /* Plant.swift in Sources */,
 				F52BDF8D1FF27A2E00ABD362 /* ViewController.swift in Sources */,
+				F53BF8361FFE5AE500E30BAE /* MonthNameHeader.swift in Sources */,
 				F53E2C8A1FFBB0A900F52A9F /* Task.swift in Sources */,
 				F53E2C8C1FFBE12D00F52A9F /* GardenCell.swift in Sources */,
 				F53E2C961FFD164B00F52A9F /* TasksViewController.swift in Sources */,
 				F53E2C901FFCF6B600F52A9F /* TaskCell.swift in Sources */,
+				F53E2C9E1FFE4BF700F52A9F /* PlantCell.swift in Sources */,
 				F52BDF8B1FF27A2E00ABD362 /* AppDelegate.swift in Sources */,
+				F53E2C9C1FFE468300F52A9F /* MyPlantsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

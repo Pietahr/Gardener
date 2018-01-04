@@ -24,9 +24,15 @@ class GardensViewController: UIViewController {
             let addGardenViewController = segue.destination as! AddGardenViewController
             addGardenViewController.garden = gardens[indexPathToEdit.row]
         case "showTasks"?:
-            let tasksViewController = ((segue.destination as! UITabBarController).viewControllers![0] as! UINavigationController).viewControllers[0] as! TasksViewController
+            let tabController = segue.destination as! UITabBarController
+            let tasksViewController = (tabController.viewControllers![0] as! UINavigationController).viewControllers[0] as! TasksViewController
+            let tasksViewControllerHistory = (tabController.viewControllers![1] as! UINavigationController).viewControllers[0] as! TasksViewController
+            let plantsViewController = (tabController.viewControllers![2] as! UINavigationController).viewControllers[0] as! MyPlantsViewController
             let selection = tableView.indexPathForSelectedRow!
             tasksViewController.garden = gardens[selection.row]
+            tasksViewControllerHistory.garden = gardens[selection.row]
+            
+            plantsViewController.plants = gardens[selection.row].plants
             tableView.deselectRow(at: selection, animated: true)
         default:
             fatalError("Unknown segue")
@@ -53,11 +59,17 @@ class GardensViewController: UIViewController {
         plants[0].tasks.append(tasks[0])
         plants[1].tasks.append(tasks[1])
         plants[1].tasks.append(tasks[2])
-        plants[0].tasks.append(tasks[3])
+        plants[2].tasks.append(tasks[3])
         
-        for i in 0...2{
-            gardens[i].plants.append(plants[i])
+        
+        for i in 0...(plants.count-1){
+            gardens[0].plants.append(plants[i])
         }
+/*
+        gardens[2].plants[0].tasksPerType(for: Task.TaskType.prune).forEach{ task in
+            print("\n" + task.type.rawValue)
+        }
+ */
 
     }
     
@@ -77,17 +89,27 @@ class GardensViewController: UIViewController {
                   type: Plant.PlantType.tree),
             Plant(name: "lavender", officialName: "Lavandula angustifolia", evergreen: true,
                   description: "The genus includes annual or short-lived herbaceous perennial plants, and shrub-like perennials, subshrubs or small shrubs. Leaf shape is diverse across the genus. They are simple in some commonly cultivated species; in other species they are pinnately toothed, or pinnate, sometimes multiple pinnate and dissected. In most species the leaves are covered in fine hairs or indumentum, which normally contain the essential oils.",
-                  type: Plant.PlantType.subshrub)
+                  type: Plant.PlantType.subshrub),
+            Plant(name: "apple blorb", officialName: "Malus domestica", evergreen: false,
+                  description: "blorb", type: Plant.PlantType.tree),
+            Plant(name: "Boom", officialName: "Malus domestica", evergreen: false,
+                  description: "blorb", type: Plant.PlantType.tree)
         ]
+        plants[0].imageName = "graveVine"
+        plants[1].imageName = "appleTree"
+        plants[2].imageName = "lavender"
+        plants[3].imageName = "appleTree"
+        plants[4].imageName = "appleTree"
         
         tasks = [
             Task(description: "Omvang van de kruin met een derde verminderen. Verwijder de gespleten takken die elkaar kruisen, de takken die slecht geplaatst zijn en de waterloten", months: [1,11,12], type: Task.TaskType.prune),
-            Task(description: "Ranken snoeien boven de tweede, derde of vierde goedgevormde knop vanaf de basis. Verwijder de twijg die de vorige herfst druiven heeft gedragen door deze vanaf de basis af te knippen.", months: [2,3], type: Task.TaskType.prune),
+            Task(description: "Ranken snoeien boven de tweede, derde of vierde goedgevormde knop vanaf de basis. Verwijder de twijg die de vorige herfst druiven heeft gedragen door deze vanaf de basis af te knippen.", months: [2,3], type: Task.TaskType.done),
             Task(description: "Beperk de lengte van de ranken tot 40-50 cm: snoei de vruchtbare twijgen op ongeveer twee bladeren na de laatste druif.", months: [5,6,7,8,9], type: Task.TaskType.prune),
             Task(description: "Snij de takken met enkele centimeters af, waarbij u de afgeronde vorm van de stuik respecteert.", months: [3,4], type: Task.TaskType.prune)
         ]
         
     }
+
 }
 
 /**

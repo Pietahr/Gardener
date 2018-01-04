@@ -13,7 +13,8 @@ class Plant {
         case subshrub = "Subshrub"
         case tree = "Tree"
 
-        static let values = [PlantType.annual, .biennial, .perennial, .grass, .climber, .bush, .subshrub, .tree]
+        static let values = [PlantType.subshrub, .tree, .annual, .biennial, .perennial, .grass, .climber, .bush]
+        
     }
     
     var name: String
@@ -22,13 +23,28 @@ class Plant {
     var evergreen: Bool
     var plantAge: Int = 0
     var tasks: [Task] = []
+    var imageName: String?
+    var plantType: PlantType
     
-    init(name: String, officialName: String, evergreen: Bool, description: String, type: PlantType?){
+    init(name: String, officialName: String, evergreen: Bool, description: String, type: PlantType){
         self.name = name
         self.officialName = officialName
         self.evergreen = evergreen
         self.description = description
+        self.plantType = type
     }
     
+    init(name: String, officialName: String, evergreen: Bool, description: String, type: PlantType, imageName: String){
+        self.name = name
+        self.officialName = officialName
+        self.evergreen = evergreen
+        self.description = description
+        self.plantType = type
+        self.imageName = imageName
+    }
     
+    func tasks(for type: Task.TaskType) -> [Task]{
+        return tasks.filter { $0.type == type }
+    }
+
 }
