@@ -306,7 +306,7 @@
                     <navigationItem key="navigationItem" title="My Plants" id="whV-bQ-Cwd">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="P2d-Zb-WtS">
                             <connections>
-                                <segue destination="sAG-y5-OVE" kind="show" identifier="allPlants" id="4o8-dV-rbG"/>
+                                <segue destination="beA-Eg-QMZ" kind="show" identifier="allPlants" id="5Tv-3g-7NL"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -316,7 +316,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nPv-Ie-dvX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6048.8000000000002" y="-581.55922038980509"/>
+            <point key="canvasLocation" x="6030" y="-582"/>
         </scene>
         <!--Add Plants-->
         <scene sceneID="vR9-xr-ifq">
@@ -429,7 +429,11 @@
                         <viewLayoutGuide key="safeArea" id="0Mm-Z5-ftn"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add Plants" id="zxP-i3-f2u">
-                        <barButtonItem key="rightBarButtonItem" title="Add" id="pD6-3w-dVr"/>
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="pD6-3w-dVr">
+                            <connections>
+                                <action selector="addPlant:" destination="Lmd-TP-1uC" id="a63-6j-LNd"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="plantDescriptionLabel" destination="skY-og-BNn" id="dgR-8s-s4W"/>
@@ -437,11 +441,104 @@
                         <outlet property="plantNameLabel" destination="r6d-NN-vy5" id="Qcv-3v-7IV"/>
                         <outlet property="plantOfficialName" destination="sLs-oN-bck" id="wsH-ri-E1J"/>
                         <outlet property="tasksTableView" destination="KtT-4o-8ik" id="uJg-o7-v2o"/>
+                        <segue destination="BRG-Fh-Pdf" kind="unwind" identifier="addedPlant" unwindAction="unwindFromAddPlant:" id="Evn-vY-OkG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dPX-eU-AEQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="BRG-Fh-Pdf" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="7070" y="-582"/>
+            <point key="canvasLocation" x="7271" y="-181"/>
+        </scene>
+        <!--All Plants-->
+        <scene sceneID="gTA-Md-qXf">
+            <objects>
+                <viewController id="beA-Eg-QMZ" customClass="AllPlantsViewController" customModule="Gardener" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rtf-Yf-O6y">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="u0F-bx-tX0">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rQa-L9-8uj">
+                                    <size key="itemSize" width="126" height="116"/>
+                                    <size key="headerReferenceSize" width="50" height="50"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="8" minY="8" maxX="8" maxY="8"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="plantCell" id="ksa-i7-yqO" customClass="PlantCell" customModule="Gardener" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="58" width="126" height="116"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="126" height="116"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EeI-MD-bbs">
+                                                    <rect key="frame" x="16" y="16" width="94" height="63"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XsJ-AT-rd8">
+                                                    <rect key="frame" x="16" y="87" width="94" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailingMargin" secondItem="XsJ-AT-rd8" secondAttribute="trailing" constant="8" id="Kzb-Re-iUN"/>
+                                            <constraint firstItem="XsJ-AT-rd8" firstAttribute="leading" secondItem="ksa-i7-yqO" secondAttribute="leadingMargin" constant="8" id="PO6-6K-ufd"/>
+                                            <constraint firstItem="XsJ-AT-rd8" firstAttribute="top" secondItem="EeI-MD-bbs" secondAttribute="bottom" constant="8" id="RhW-Q6-u3L"/>
+                                            <constraint firstAttribute="bottom" secondItem="XsJ-AT-rd8" secondAttribute="bottom" constant="8" id="TBb-gE-94i"/>
+                                            <constraint firstItem="EeI-MD-bbs" firstAttribute="top" secondItem="ksa-i7-yqO" secondAttribute="topMargin" constant="8" id="auk-si-Avk"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="EeI-MD-bbs" secondAttribute="trailing" constant="8" id="gOP-GQ-3GD"/>
+                                            <constraint firstItem="EeI-MD-bbs" firstAttribute="leading" secondItem="ksa-i7-yqO" secondAttribute="leadingMargin" constant="8" id="w0y-Hv-e0a"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="plantImageView" destination="EeI-MD-bbs" id="xEf-oN-6qJ"/>
+                                            <outlet property="plantNameLabel" destination="XsJ-AT-rd8" id="CqP-AI-9hF"/>
+                                            <segue destination="Lmd-TP-1uC" kind="show" identifier="plantDetail" id="mhm-9l-L6Q"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="monthNameHeader" id="GNj-L0-a3p" customClass="MonthNameHeader" customModule="Gardener" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vSV-od-Y7s">
+                                            <rect key="frame" x="16" y="10" width="343" height="31.5"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="vSV-od-Y7s" firstAttribute="centerY" secondItem="GNj-L0-a3p" secondAttribute="centerY" id="Lrc-Xg-XL3"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="vSV-od-Y7s" secondAttribute="trailing" constant="8" id="Phd-Cd-ffj"/>
+                                        <constraint firstItem="vSV-od-Y7s" firstAttribute="leading" secondItem="GNj-L0-a3p" secondAttribute="leadingMargin" constant="8" id="rtK-yg-hth"/>
+                                    </constraints>
+                                    <connections>
+                                        <outlet property="monthNameLabel" destination="vSV-od-Y7s" id="F9x-TK-etU"/>
+                                    </connections>
+                                </collectionReusableView>
+                                <connections>
+                                    <outlet property="dataSource" destination="beA-Eg-QMZ" id="eX9-uP-8Pb"/>
+                                    <outlet property="delegate" destination="beA-Eg-QMZ" id="3Em-Y7-LIH"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Jek-qO-Jj6"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="All Plants" id="N6M-zA-scF"/>
+                    <connections>
+                        <outlet property="allPlantsCollectionView" destination="u0F-bx-tX0" id="9DI-DH-0b6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wQb-mu-Bdq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6030" y="267"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yFN-Kz-6Y0">
@@ -652,6 +749,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="fJf-Tw-Mnh"/>
+        <segue reference="mhm-9l-L6Q"/>
         <segue reference="lpu-pr-43o"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -31,8 +31,7 @@ class GardensViewController: UIViewController {
             let selection = tableView.indexPathForSelectedRow!
             tasksViewController.garden = gardens[selection.row]
             tasksViewControllerHistory.garden = gardens[selection.row]
-            
-            plantsViewController.plants = gardens[selection.row].plants
+            plantsViewController.garden = gardens[selection.row]
             tableView.deselectRow(at: selection, animated: true)
         default:
             fatalError("Unknown segue")

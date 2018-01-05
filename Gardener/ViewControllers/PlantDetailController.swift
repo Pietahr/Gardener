@@ -17,6 +17,12 @@ class PlantDetailController: UIViewController {
         plantOfficialName.text = plant.officialName
         plantDescriptionLabel.text = plant.description
     }
+    
+    @IBAction func addPlant(_ sender: Any) {
+        print("adding plant in plantdetailController")
+        performSegue(withIdentifier: "addedPlant", sender: self)
+    }
+
 }
 
 extension PlantDetailController: UITableViewDelegate {

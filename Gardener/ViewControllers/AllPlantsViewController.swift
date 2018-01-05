@@ -1,54 +1,49 @@
 
 import UIKit
 
-class MyPlantsViewController: UIViewController {
+class AllPlantsViewController: UIViewController {
     
-    var garden: Garden!
+    var plants: [Plant]!
     
-    @IBOutlet weak var plantsCollectionView: UICollectionView!
-
+    @IBOutlet weak var allPlantsCollectionView: UICollectionView!
+    
     override func viewDidLoad() {
-        
+        plants = getPlants()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch  segue.identifier {
-        case "allPlants"?:
-            break
         case "plantDetail"?:
             //let plantDetailController = (segue.destination as! UINavigationController).viewControllers[0] as! PlantDetailController
             let plantDetailController = segue.destination as! PlantDetailController
-            let indexPath = plantsCollectionView!.indexPathsForSelectedItems!.first!
+            let indexPath = allPlantsCollectionView!.indexPathsForSelectedItems!.first!
             let sectionNumberForPlantType =  Plant.PlantType.values[indexPath.section]
-            plantDetailController.plant = garden.plants(for: sectionNumberForPlantType)[indexPath.item]
-            plantDetailController.navigationItem.rightBarButtonItem = nil
+            plantDetailController.plant = plants.filter{$0.plantType == sectionNumberForPlantType}[indexPath.item]
         default:
             fatalError("Unknown segue")
         }
     }
     
-    @IBAction func unwindFromAddPlant(_ segue: UIStoryboardSegue) {
-        switch segue.identifier {
-        case "addedPlant"?:
-            let plantDetailController = segue.source as! PlantDetailController
-            let plant = plantDetailController.plant!
-            
-            let sectionNr = plant.enumTypeNumber()
-            garden.plants.append(plant)
-
-            plantsCollectionView.insertItems(at: [IndexPath(row: garden.numberOfPlants(for: plant.plantType)-1, section: sectionNr)])
-            print("added plant in myplantsViewController" + plant.name)
-        default:
-            fatalError("Unkown segue")
-        }
+    
+    func getPlants() -> [Plant] {
+        let allPlants = [
+            Plant(name: "test",officialName: "offTest",evergreen: true, description: "",type: Plant.PlantType.annual,imageName: "lavender"),
+            Plant(name: "test1",officialName: "offTest",evergreen: true, description: "",type: Plant.PlantType.annual,imageName: "lavender"),
+            Plant(name: "test2",officialName: "offTest",evergreen: true, description: "",type: Plant.PlantType.tree,imageName: "lavender"),
+            Plant(name: "test3",officialName: "offTest",evergreen: true, description: "",type: Plant.PlantType.bush,imageName: "lavender"),
+            Plant(name: "test4",officialName: "offTest",evergreen: true, description: "",type: Plant.PlantType.climber,imageName: "lavender"),
+            Plant(name: "test5",officialName: "offTest",evergreen: true, description: "",type: Plant.PlantType.annual,imageName: "lavender")
+        ]
+        return allPlants
     }
+
 }
 
-extension MyPlantsViewController: UICollectionViewDelegate {
+extension AllPlantsViewController: UICollectionViewDelegate {
     
 }
 
-extension MyPlantsViewController: UICollectionViewDataSource {
+extension AllPlantsViewController: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return Plant.PlantType.values.count
@@ -56,14 +51,14 @@ extension MyPlantsViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let type = Plant.PlantType.values[section]
-        return garden.plants(for: type).count
+        return plants.filter{$0.plantType == type}.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "plantCell", for: indexPath) as! PlantCell
         let type = Plant.PlantType.values[indexPath.section]
         //cell.plant = garden.plants(for: type)[indexPath.item]
-        cell.plant = garden.plants(for: type)[indexPath.item]
+        cell.plant = plants.filter{$0.plantType == type}[indexPath.item]
         return cell
     }
     
@@ -73,4 +68,5 @@ extension MyPlantsViewController: UICollectionViewDataSource {
         return header
     }
 }
+
 
