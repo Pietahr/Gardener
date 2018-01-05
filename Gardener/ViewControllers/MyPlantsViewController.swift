@@ -13,12 +13,16 @@ class MyPlantsViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch  segue.identifier {
-        case "showTasks"?:
-            break
         case "allPlants"?:
             let plantsViewController = segue.destination as! MyPlantsViewController
             plantsViewController.plants = MyPlantsViewController.getPlants()
             plantsViewController.navigationItem.rightBarButtonItem = nil
+        case "plantDetail"?:
+            //let plantDetailController = (segue.destination as! UINavigationController).viewControllers[0] as! PlantDetailController
+            let plantDetailController = segue.destination as! PlantDetailController
+            let indexPath = plantsCollectionView!.indexPathsForSelectedItems!.first!
+            let sectionNumberForPlantType =  Plant.PlantType.values[indexPath.section]
+            plantDetailController.plant = plants.filter{$0.plantType == sectionNumberForPlantType}[indexPath.item]
         default:
             fatalError("Unknown segue")
         }

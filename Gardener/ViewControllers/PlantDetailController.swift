@@ -8,11 +8,14 @@ class PlantDetailController: UIViewController {
     @IBOutlet weak var tasksTableView: UITableView!
     @IBOutlet weak var plantImageView: UIImageView!
     @IBOutlet weak var plantNameLabel: UILabel!
+    @IBOutlet weak var plantOfficialName: UILabel!
     @IBOutlet weak var plantDescriptionLabel: UILabel!
     
     override func viewDidLoad() {
         plantImageView.image = UIImage(named: plant.imageName!)
         plantNameLabel.text = plant.name
+        plantOfficialName.text = plant.officialName
+        plantDescriptionLabel.text = plant.description
     }
 }
 

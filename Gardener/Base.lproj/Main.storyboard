@@ -59,7 +59,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="addrLabel" destination="QTH-A2-shk" id="Ygc-rU-rKB"/>
-                                            <segue destination="8F7-rm-B1V" kind="showDetail" identifier="showTasks" id="ivD-lp-51E"/>
+                                            <segue destination="8F7-rm-B1V" kind="show" identifier="showTasks" action="showDetailViewController:sender:" id="ivD-lp-51E"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -270,7 +270,7 @@
                                         <connections>
                                             <outlet property="plantImageView" destination="XwJ-sC-Rv3" id="wCg-gY-T9b"/>
                                             <outlet property="plantNameLabel" destination="Dxb-U0-roZ" id="XwJ-la-83p"/>
-                                            <segue destination="Lmd-TP-1uC" kind="showDetail" id="JA0-gD-VJe"/>
+                                            <segue destination="Lmd-TP-1uC" kind="show" identifier="plantDetail" id="O6p-to-WAa"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -306,13 +306,11 @@
                     <navigationItem key="navigationItem" title="My Plants" id="whV-bQ-Cwd">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="P2d-Zb-WtS">
                             <connections>
-                                <action selector="addButtonAction:" destination="sAG-y5-OVE" id="MED-eq-mPP"/>
                                 <segue destination="sAG-y5-OVE" kind="show" identifier="allPlants" id="4o8-dV-rbG"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="addButton" destination="P2d-Zb-WtS" id="rar-9C-GI0"/>
                         <outlet property="plantsCollectionView" destination="t3z-My-g5Q" id="Dkz-ZT-gjC"/>
                     </connections>
                 </viewController>
@@ -329,26 +327,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="muR-HY-Qks">
-                                <rect key="frame" x="0.0" y="20" width="375" height="431.5"/>
+                                <rect key="frame" x="0.0" y="168" width="375" height="326"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QDo-ws-AxZ">
-                                        <rect key="frame" x="37.5" y="0.0" width="300" height="300"/>
+                                        <rect key="frame" x="62.5" y="0.0" width="250" height="250"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="300" id="6UL-Lo-dMC"/>
-                                            <constraint firstAttribute="height" constant="300" id="bvM-3E-syi"/>
+                                            <constraint firstAttribute="width" constant="250" id="6UL-Lo-dMC"/>
+                                            <constraint firstAttribute="height" constant="250" id="bvM-3E-syi"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r6d-NN-vy5">
-                                        <rect key="frame" x="0.0" y="300" width="375" height="31.5"/>
+                                        <rect key="frame" x="0.0" y="250" width="375" height="31.5"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sLs-oN-bck">
+                                        <rect key="frame" x="163.5" y="281.5" width="48" height="24"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="skY-og-BNn">
-                                        <rect key="frame" x="0.0" y="331.5" width="375" height="100"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="3Lw-v0-I04"/>
-                                        </constraints>
+                                        <rect key="frame" x="0.0" y="305.5" width="375" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -363,11 +364,18 @@
                                 </constraints>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KtT-4o-8ik">
-                                <rect key="frame" x="0.0" y="467.5" width="375" height="199.5"/>
+                                <rect key="frame" x="0.0" y="510" width="375" height="59"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tasks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nEz-An-ZwT">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="32"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="plantDetailCell" rowHeight="68" id="kTd-6O-831" customClass="PlantDetailCell" customModule="Gardener" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="68"/>
+                                        <rect key="frame" x="0.0" y="60" width="375" height="68"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kTd-6O-831" id="5X0-Z5-nov">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="67.5"/>
@@ -402,6 +410,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Lmd-TP-1uC" id="xJh-FZ-7e7"/>
+                                    <outlet property="delegate" destination="Lmd-TP-1uC" id="nbV-v2-rMq"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -411,22 +423,25 @@
                             <constraint firstItem="0Mm-Z5-ftn" firstAttribute="trailing" secondItem="muR-HY-Qks" secondAttribute="trailing" id="WfQ-De-7d2"/>
                             <constraint firstItem="KtT-4o-8ik" firstAttribute="bottom" secondItem="0Mm-Z5-ftn" secondAttribute="bottom" id="WjV-q9-fTW"/>
                             <constraint firstItem="KtT-4o-8ik" firstAttribute="top" secondItem="muR-HY-Qks" secondAttribute="bottom" constant="16" id="a5J-oh-IM5"/>
-                            <constraint firstItem="muR-HY-Qks" firstAttribute="top" secondItem="0Mm-Z5-ftn" secondAttribute="top" id="bLf-2e-TpM"/>
+                            <constraint firstItem="muR-HY-Qks" firstAttribute="top" secondItem="0Mm-Z5-ftn" secondAttribute="top" constant="60" id="bLf-2e-TpM"/>
                             <constraint firstItem="muR-HY-Qks" firstAttribute="leading" secondItem="0Mm-Z5-ftn" secondAttribute="leading" id="ji2-K9-yjD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0Mm-Z5-ftn"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Add Plants" id="zxP-i3-f2u"/>
+                    <navigationItem key="navigationItem" title="Add Plants" id="zxP-i3-f2u">
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="pD6-3w-dVr"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="plantDescriptionLabel" destination="skY-og-BNn" id="dgR-8s-s4W"/>
                         <outlet property="plantImageView" destination="QDo-ws-AxZ" id="76E-bo-qxJ"/>
                         <outlet property="plantNameLabel" destination="r6d-NN-vy5" id="Qcv-3v-7IV"/>
+                        <outlet property="plantOfficialName" destination="sLs-oN-bck" id="wsH-ri-E1J"/>
                         <outlet property="tasksTableView" destination="KtT-4o-8ik" id="uJg-o7-v2o"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dPX-eU-AEQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6992.8000000000002" y="-582.45877061469275"/>
+            <point key="canvasLocation" x="7070" y="-582"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yFN-Kz-6Y0">
@@ -636,7 +651,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="l2h-CH-J1L"/>
+        <segue reference="fJf-Tw-Mnh"/>
         <segue reference="lpu-pr-43o"/>
     </inferredMetricsTieBreakers>
 </document>
