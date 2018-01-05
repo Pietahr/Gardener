@@ -7,7 +7,7 @@ class MyPlantsViewController: UIViewController {
     var plants: [Plant]!
     
     @IBOutlet weak var plantsCollectionView: UICollectionView!
-    
+
     override func viewDidLoad() {
     }
     
@@ -18,6 +18,7 @@ class MyPlantsViewController: UIViewController {
         case "allPlants"?:
             let plantsViewController = segue.destination as! MyPlantsViewController
             plantsViewController.plants = MyPlantsViewController.getPlants()
+            plantsViewController.navigationItem.rightBarButtonItem = nil
         default:
             fatalError("Unknown segue")
         }
