@@ -5,11 +5,12 @@ class Task {
     enum TaskType: String {
         
         case prune = "Prune"
-        case done = "Done"
+        case winterCover = "Cover for winter"
         
-        static let values = [TaskType.prune, .done]
+        static let values = [TaskType.prune, .winterCover]
     }
     
+    var done: Bool = false
     var months: [Int]
     var description: String
     var type: TaskType

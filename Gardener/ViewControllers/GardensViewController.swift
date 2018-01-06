@@ -104,7 +104,7 @@ class GardensViewController: UIViewController {
         
         tasks = [
             Task(description: "Omvang van de kruin met een derde verminderen. Verwijder de gespleten takken die elkaar kruisen, de takken die slecht geplaatst zijn en de waterloten", months: [1,11,12], type: Task.TaskType.prune),
-            Task(description: "Ranken snoeien boven de tweede, derde of vierde goedgevormde knop vanaf de basis. Verwijder de twijg die de vorige herfst druiven heeft gedragen door deze vanaf de basis af te knippen.", months: [2,3], type: Task.TaskType.done),
+            Task(description: "Ranken snoeien boven de tweede, derde of vierde goedgevormde knop vanaf de basis. Verwijder de twijg die de vorige herfst druiven heeft gedragen door deze vanaf de basis af te knippen.", months: [2,3], type: Task.TaskType.winterCover),
             Task(description: "Beperk de lengte van de ranken tot 40-50 cm: snoei de vruchtbare twijgen op ongeveer twee bladeren na de laatste druif.", months: [5,6,7,8,9], type: Task.TaskType.prune),
             Task(description: "Snij de takken met enkele centimeters af, waarbij u de afgeronde vorm van de stuik respecteert.", months: [3,4], type: Task.TaskType.prune)
         ]

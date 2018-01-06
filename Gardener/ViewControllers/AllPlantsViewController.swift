@@ -27,7 +27,8 @@ class AllPlantsViewController: UIViewController {
     
     func getPlants() -> [Plant] {
         let task = Task(description: "new Prune Task", months: [1], type: Task.TaskType.prune)
-        let task2 = Task(description: "new Done Task", months: [1], type: Task.TaskType.done)
+        let task2 = Task(description: "new Done Task", months: [1], type: Task.TaskType.winterCover)
+        task2.done = true
         
         let allPlants = [
             Plant(name: "test",officialName: "offTest",evergreen: true, description: "",type: Plant.PlantType.annual,imageName: "lavender"),

@@ -12,14 +12,17 @@ class TaskCell: UITableViewCell {
         didSet {
             plantNameLabel.text = task.type.rawValue
             descriptionLabel.text = task.description
-            checkBox.on = (task.type == Task.TaskType.done)
+            checkBox.on = (task.done)
         }
     }
     
     @IBAction func toggleTask(_ sender: Any) {
         if(checkBox.on){
-            task.type = Task.TaskType.done
+            task.done = true
             print("task set to done")
+        } else {
+            task.done = false
+            print("task undone")
         }
     }
     
