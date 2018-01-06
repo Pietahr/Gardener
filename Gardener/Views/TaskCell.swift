@@ -22,13 +22,16 @@ class TaskCell: UITableViewCell {
     }
     
     private func getColorForType() -> UIColor{
+        var color = UIColor.white
+        
         switch task.type {
         case Task.TaskType.prune:
-            return UIColor.blue
+            color = UIColor.blue
         case Task.TaskType.winterCover:
-            return UIColor.red
+            color = UIColor.red
         }
-        return UIColor.white
+        
+        return color
     }
     
     @IBAction func toggleTask(_ sender: Any) {

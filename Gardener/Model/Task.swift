@@ -11,7 +11,13 @@ class Task {
     }
     
     var done: Bool = false
-    var months: [Int]
+    var months: [Int]{
+        didSet {
+            if months.contains(where: {$0 < 1 || $0 > 12 }){
+                fatalError("monthNumber must be a value equal or between 1 and 12")
+            }
+        }
+    }
     var description: String
     var type: TaskType
     var plantName: String?
