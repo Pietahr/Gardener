@@ -7,7 +7,7 @@ class TasksViewController: UIViewController {
     var history: Bool!
     
     @IBOutlet weak var tasksTableView: UITableView!
-
+    
     override func viewDidLoad() {
     }
     

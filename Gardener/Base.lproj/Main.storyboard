@@ -595,16 +595,16 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="kgm-Ql-sbu">
-                                                    <rect key="frame" x="15" y="11" width="42" height="47"/>
+                                                    <rect key="frame" x="15" y="11" width="294" height="47"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rKK-Kd-ztA">
-                                                            <rect key="frame" x="0.0" y="0.0" width="42" height="20.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="294" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="puf-Fs-nbk">
-                                                            <rect key="frame" x="0.0" y="26.5" width="42" height="20.5"/>
+                                                            <rect key="frame" x="0.0" y="26.5" width="294" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -624,13 +624,14 @@
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <connections>
                                                         <action selector="checkBox:" destination="XQB-xO-Xkd" eventType="touchDown" id="gdJ-pz-iux"/>
+                                                        <action selector="toggleTask:" destination="mDZ-09-NHn" eventType="valueChanged" id="G7x-g1-91L"/>
                                                     </connections>
                                                 </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="3dH-FB-k1g" secondAttribute="bottom" constant="16" id="2ry-fs-J5j"/>
                                                 <constraint firstItem="kgm-Ql-sbu" firstAttribute="top" secondItem="OUr-ui-XM0" secondAttribute="topMargin" id="AdY-Fv-CT5"/>
-                                                <constraint firstItem="3dH-FB-k1g" firstAttribute="leading" secondItem="kgm-Ql-sbu" secondAttribute="trailing" constant="268" id="U7Q-Ap-5sb"/>
+                                                <constraint firstItem="3dH-FB-k1g" firstAttribute="leading" secondItem="kgm-Ql-sbu" secondAttribute="trailing" constant="16" id="U7Q-Ap-5sb"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="kgm-Ql-sbu" secondAttribute="bottom" id="Vz3-sB-PWX"/>
                                                 <constraint firstAttribute="trailing" secondItem="3dH-FB-k1g" secondAttribute="trailing" constant="8" id="Xly-f8-BD9"/>
                                                 <constraint firstItem="3dH-FB-k1g" firstAttribute="top" secondItem="OUr-ui-XM0" secondAttribute="top" constant="16" id="hji-2y-Ukj"/>

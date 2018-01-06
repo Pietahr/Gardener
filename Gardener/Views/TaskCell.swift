@@ -15,4 +15,13 @@ class TaskCell: UITableViewCell {
             checkBox.on = (task.type == Task.TaskType.done)
         }
     }
+    
+    @IBAction func toggleTask(_ sender: Any) {
+        if(checkBox.on){
+            task.type = Task.TaskType.done
+            print("task set to done")
+        }
+    }
+    
+
 }
