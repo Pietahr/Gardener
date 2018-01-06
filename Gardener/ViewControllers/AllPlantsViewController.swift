@@ -39,8 +39,8 @@ class AllPlantsViewController: UIViewController {
             Plant(name: "test5",officialName: "offTest",evergreen: true, description: "",type: Plant.PlantType.tree,imageName: "lavender")
         ]
         
-        allPlants[0].tasks.append(task)
-        allPlants[0].tasks.append(task2)
+        allPlants[0].addTask(new: task)
+        allPlants[0].addTask(new: task2)
         return allPlants
     }
 

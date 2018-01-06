@@ -14,6 +14,7 @@ class Task {
     var months: [Int]
     var description: String
     var type: TaskType
+    var plantName: String?
     
     init(description: String,months: [Int], type: TaskType){
         self.months = months

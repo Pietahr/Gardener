@@ -69,5 +69,10 @@ class Plant {
         }
         return number
     }
+    
+    func addTask(new task: Task){
+        task.plantName = self.name
+        tasks.append(task)
+    }
 
 }

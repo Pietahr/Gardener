@@ -57,11 +57,10 @@ class GardensViewController: UIViewController {
         
         generateData()
 
-        plants[0].tasks.append(tasks[0])
-        plants[1].tasks.append(tasks[1])
-        plants[1].tasks.append(tasks[2])
-        plants[2].tasks.append(tasks[3])
-        
+        plants[0].addTask(new: tasks[0])
+        plants[1].addTask(new: tasks[1])
+        plants[1].addTask(new: tasks[2])
+        plants[2].addTask(new: tasks[3])
         
         for i in 0...(plants.count-1){
             gardens[0].plants.append(plants[i])

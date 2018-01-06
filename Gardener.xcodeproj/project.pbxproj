@@ -26,6 +26,7 @@
 		F53E2C961FFD164B00F52A9F /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53E2C951FFD164B00F52A9F /* TasksViewController.swift */; };
 		F53E2C9C1FFE468300F52A9F /* MyPlantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53E2C9B1FFE468300F52A9F /* MyPlantsViewController.swift */; };
 		F53E2C9E1FFE4BF700F52A9F /* PlantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53E2C9D1FFE4BF700F52A9F /* PlantCell.swift */; };
+		F5668D90200156CB00834698 /* TypeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5668D8F200156CB00834698 /* TypeLabel.swift */; };
 		F5EC891620002971007F90A1 /* AllPlantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EC891520002971007F90A1 /* AllPlantsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		F53E2C951FFD164B00F52A9F /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 		F53E2C9B1FFE468300F52A9F /* MyPlantsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlantsViewController.swift; sourceTree = "<group>"; };
 		F53E2C9D1FFE4BF700F52A9F /* PlantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantCell.swift; sourceTree = "<group>"; };
+		F5668D8F200156CB00834698 /* TypeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeLabel.swift; sourceTree = "<group>"; };
 		F5EC891520002971007F90A1 /* AllPlantsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPlantsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,6 +108,7 @@
 				F53E2C9D1FFE4BF700F52A9F /* PlantCell.swift */,
 				F53BF8351FFE5AE500E30BAE /* MonthNameHeader.swift */,
 				F53BF8391FFF887000E30BAE /* PlantDetailCell.swift */,
+				F5668D8F200156CB00834698 /* TypeLabel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 				F5261D881FF29D6600CFD0D6 /* Plant.swift in Sources */,
 				F52BDF8D1FF27A2E00ABD362 /* ViewController.swift in Sources */,
 				F53BF8361FFE5AE500E30BAE /* MonthNameHeader.swift in Sources */,
+				F5668D90200156CB00834698 /* TypeLabel.swift in Sources */,
 				F53E2C8A1FFBB0A900F52A9F /* Task.swift in Sources */,
 				F53E2C8C1FFBE12D00F52A9F /* GardenCell.swift in Sources */,
 				F53E2C961FFD164B00F52A9F /* TasksViewController.swift in Sources */,

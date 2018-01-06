@@ -587,24 +587,46 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="taskCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="taskCell" rowHeight="69" id="mDZ-09-NHn" customClass="TaskCell" customModule="Gardener" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="69"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="taskCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="taskCell" rowHeight="80" id="mDZ-09-NHn" customClass="TaskCell" customModule="Gardener" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mDZ-09-NHn" id="OUr-ui-XM0">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="68.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="kgm-Ql-sbu">
-                                                    <rect key="frame" x="15" y="11" width="294" height="47"/>
+                                                    <rect key="frame" x="15" y="11" width="345" height="58"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rKK-Kd-ztA">
-                                                            <rect key="frame" x="0.0" y="0.0" width="294" height="20.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Zgg-X7-mQV">
+                                                            <rect key="frame" x="0.0" y="0.0" width="345" height="29.5"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rKK-Kd-ztA">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="247" height="29.5"/>
+                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLf-4M-e0A">
+                                                                    <rect key="frame" x="255" y="0.0" width="42" height="29.5"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <view contentMode="right" translatesAutoresizingMaskIntoConstraints="NO" id="3dH-FB-k1g" customClass="BEMCheckBox">
+                                                                    <rect key="frame" x="305" y="0.0" width="40" height="29.5"/>
+                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="40" id="WmY-20-cme"/>
+                                                                    </constraints>
+                                                                    <connections>
+                                                                        <action selector="checkBox:" destination="XQB-xO-Xkd" eventType="touchDown" id="gdJ-pz-iux"/>
+                                                                        <action selector="toggleTask:" destination="mDZ-09-NHn" eventType="valueChanged" id="G7x-g1-91L"/>
+                                                                    </connections>
+                                                                </view>
+                                                            </subviews>
+                                                        </stackView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="puf-Fs-nbk">
-                                                            <rect key="frame" x="0.0" y="26.5" width="294" height="20.5"/>
+                                                            <rect key="frame" x="0.0" y="37.5" width="345" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -613,28 +635,15 @@
                                                     <constraints>
                                                         <constraint firstItem="puf-Fs-nbk" firstAttribute="leading" secondItem="kgm-Ql-sbu" secondAttribute="leading" id="BVu-BY-8sO"/>
                                                         <constraint firstAttribute="trailing" secondItem="puf-Fs-nbk" secondAttribute="trailing" id="CsJ-iF-YFi"/>
-                                                        <constraint firstItem="rKK-Kd-ztA" firstAttribute="leading" secondItem="kgm-Ql-sbu" secondAttribute="leading" id="TtS-Zb-z8L"/>
-                                                        <constraint firstAttribute="trailing" secondItem="rKK-Kd-ztA" secondAttribute="trailing" id="g3T-M9-1jU"/>
                                                         <constraint firstAttribute="bottom" secondItem="puf-Fs-nbk" secondAttribute="bottom" id="oUv-LM-MdH"/>
-                                                        <constraint firstItem="rKK-Kd-ztA" firstAttribute="top" secondItem="kgm-Ql-sbu" secondAttribute="top" id="sXF-6I-R1C"/>
+                                                        <constraint firstItem="puf-Fs-nbk" firstAttribute="top" secondItem="Zgg-X7-mQV" secondAttribute="bottom" constant="8" id="vCR-ei-bcx"/>
                                                     </constraints>
                                                 </stackView>
-                                                <view contentMode="right" translatesAutoresizingMaskIntoConstraints="NO" id="3dH-FB-k1g" customClass="BEMCheckBox">
-                                                    <rect key="frame" x="325" y="16" width="42" height="37"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <connections>
-                                                        <action selector="checkBox:" destination="XQB-xO-Xkd" eventType="touchDown" id="gdJ-pz-iux"/>
-                                                        <action selector="toggleTask:" destination="mDZ-09-NHn" eventType="valueChanged" id="G7x-g1-91L"/>
-                                                    </connections>
-                                                </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="3dH-FB-k1g" secondAttribute="bottom" constant="16" id="2ry-fs-J5j"/>
                                                 <constraint firstItem="kgm-Ql-sbu" firstAttribute="top" secondItem="OUr-ui-XM0" secondAttribute="topMargin" id="AdY-Fv-CT5"/>
-                                                <constraint firstItem="3dH-FB-k1g" firstAttribute="leading" secondItem="kgm-Ql-sbu" secondAttribute="trailing" constant="16" id="U7Q-Ap-5sb"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="kgm-Ql-sbu" secondAttribute="trailing" id="HsU-1e-fOh"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="kgm-Ql-sbu" secondAttribute="bottom" id="Vz3-sB-PWX"/>
-                                                <constraint firstAttribute="trailing" secondItem="3dH-FB-k1g" secondAttribute="trailing" constant="8" id="Xly-f8-BD9"/>
-                                                <constraint firstItem="3dH-FB-k1g" firstAttribute="top" secondItem="OUr-ui-XM0" secondAttribute="top" constant="16" id="hji-2y-Ukj"/>
                                                 <constraint firstItem="kgm-Ql-sbu" firstAttribute="leading" secondItem="OUr-ui-XM0" secondAttribute="leadingMargin" id="sMS-A1-rNG"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -642,6 +651,7 @@
                                             <outlet property="checkBox" destination="3dH-FB-k1g" id="5M0-nD-1H3"/>
                                             <outlet property="descriptionLabel" destination="puf-Fs-nbk" id="Y2n-Fu-lqk"/>
                                             <outlet property="plantNameLabel" destination="rKK-Kd-ztA" id="UaQ-3o-WXC"/>
+                                            <outlet property="typeLabel" destination="JLf-4M-e0A" id="KYy-Fp-Kv5"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
