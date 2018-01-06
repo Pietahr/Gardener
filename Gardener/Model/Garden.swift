@@ -11,12 +11,30 @@ class Garden {
         self.location = location
     }
     
-    func plantTasksByTaskType(for type: Task.TaskType) -> [Task] {
+    func plantTasksByType(for type: Task.TaskType) -> [Task] {
         var tasks: [Task] = []
         
         for plant in plants {
             for task in plant.tasks(for: type){
                 tasks.append(task)
+            }
+        }
+        return tasks
+    }
+    
+    func currentPlantTasksByType(for type: Task.TaskType) -> [Task] {
+        return currentTasks().filter { $0.type == type }
+    }
+    
+    
+    func currentTasks() -> [Task] {
+        var tasks: [Task] = []
+        
+        for plant in plants {
+            for task in plant.tasks{
+                if task.type != Task.TaskType.done {
+                    tasks.append(task)
+                }
             }
         }
         return tasks

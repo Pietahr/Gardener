@@ -26,14 +26,20 @@ class AllPlantsViewController: UIViewController {
     
     
     func getPlants() -> [Plant] {
+        let task = Task(description: "new Prune Task", months: [1], type: Task.TaskType.prune)
+        let task2 = Task(description: "new Done Task", months: [1], type: Task.TaskType.done)
+        
         let allPlants = [
             Plant(name: "test",officialName: "offTest",evergreen: true, description: "",type: Plant.PlantType.annual,imageName: "lavender"),
             Plant(name: "test1",officialName: "offTest",evergreen: true, description: "",type: Plant.PlantType.annual,imageName: "lavender"),
-            Plant(name: "test2",officialName: "offTest",evergreen: true, description: "",type: Plant.PlantType.tree,imageName: "lavender"),
+            Plant(name: "test2",officialName: "offTest",evergreen: true, description: "",type: Plant.PlantType.annual,imageName: "lavender"),
             Plant(name: "test3",officialName: "offTest",evergreen: true, description: "",type: Plant.PlantType.bush,imageName: "lavender"),
             Plant(name: "test4",officialName: "offTest",evergreen: true, description: "",type: Plant.PlantType.climber,imageName: "lavender"),
-            Plant(name: "test5",officialName: "offTest",evergreen: true, description: "",type: Plant.PlantType.annual,imageName: "lavender")
+            Plant(name: "test5",officialName: "offTest",evergreen: true, description: "",type: Plant.PlantType.tree,imageName: "lavender")
         ]
+        
+        allPlants[0].tasks.append(task)
+        allPlants[0].tasks.append(task2)
         return allPlants
     }
 

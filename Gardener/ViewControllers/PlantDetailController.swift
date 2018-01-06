@@ -19,7 +19,6 @@ class PlantDetailController: UIViewController {
     }
     
     @IBAction func addPlant(_ sender: Any) {
-        print("adding plant in plantdetailController")
         performSegue(withIdentifier: "addedPlant", sender: self)
     }
 

@@ -30,7 +30,9 @@ class GardensViewController: UIViewController {
             let plantsViewController = (tabController.viewControllers![2] as! UINavigationController).viewControllers[0] as! MyPlantsViewController
             let selection = tableView.indexPathForSelectedRow!
             tasksViewController.garden = gardens[selection.row]
+            tasksViewController.history = false
             tasksViewControllerHistory.garden = gardens[selection.row]
+            tasksViewControllerHistory.history = true
             plantsViewController.garden = gardens[selection.row]
             tableView.deselectRow(at: selection, animated: true)
         default:

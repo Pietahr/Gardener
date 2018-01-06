@@ -22,7 +22,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="auB-RQ-rQ8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-58" y="1173"/>
+            <point key="canvasLocation" x="910" y="794"/>
         </scene>
         <!--Gardens-->
         <scene sceneID="KBa-Sq-s6t">
@@ -748,7 +748,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="fJf-Tw-Mnh"/>
+        <segue reference="l2h-CH-J1L"/>
         <segue reference="mhm-9l-L6Q"/>
         <segue reference="lpu-pr-43o"/>
     </inferredMetricsTieBreakers>

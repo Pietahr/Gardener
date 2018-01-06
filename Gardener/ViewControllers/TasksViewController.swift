@@ -4,11 +4,15 @@ import BEMCheckBox
 class TasksViewController: UIViewController {
     
     var garden: Garden!
+    var history: Bool!
     
     @IBOutlet weak var tasksTableView: UITableView!
 
     override func viewDidLoad() {
-        title = garden.ownerName
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tasksTableView.reloadData()
     }
 }
 
@@ -19,18 +23,28 @@ extension TasksViewController: UITableViewDelegate {
 extension TasksViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return Task.TaskType.values.count
+        if(!history){
+            return Task.TaskType.values.count
+        }
+        return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let type = Task.TaskType.values[section]
-        return garden.plantTasksByTaskType(for: type).count
+        if(!history){
+            return garden.currentPlantTasksByType(for: type).count
+        }
+        return garden.plantTasksByType(for: Task.TaskType.done).count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath) as! TaskCell
-        let type = Task.TaskType.values[indexPath.section]
-        cell.task = garden.plantTasksByTaskType(for: type)[indexPath.item]
+        if (!history){
+            let type = Task.TaskType.values[indexPath.section]
+            cell.task = garden.currentPlantTasksByType(for: type)[indexPath.row]
+        } else {
+            cell.task = garden.plantTasksByType(for: Task.TaskType.done)[indexPath.row]
+        }
         return cell
     }
 }

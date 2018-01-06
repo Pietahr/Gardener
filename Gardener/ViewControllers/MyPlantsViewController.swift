@@ -32,12 +32,10 @@ class MyPlantsViewController: UIViewController {
         case "addedPlant"?:
             let plantDetailController = segue.source as! PlantDetailController
             let plant = plantDetailController.plant!
+            garden.plants.append(plant)
             
             let sectionNr = plant.enumTypeNumber()
-            garden.plants.append(plant)
-
             plantsCollectionView.insertItems(at: [IndexPath(row: garden.numberOfPlants(for: plant.plantType)-1, section: sectionNr)])
-            print("added plant in myplantsViewController" + plant.name)
         default:
             fatalError("Unkown segue")
         }
