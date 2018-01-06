@@ -20,4 +20,21 @@ class Task {
         self.description = description
         self.type = type
     }
+    
+    func monthForTask() -> Int{
+        //current monthnumber
+        let date = Date()
+        let calendar = Calendar.current
+        let currentMonthNr = calendar.component(.month, from: date)
+        //let currentMonthNr = 2
+        
+        //get first month for task in future
+        for month in months {
+            if month >= currentMonthNr{
+                return month
+            }
+        }
+        //all months for task have passed, display in last acceptable month
+        return months[months.count-1]
+    }
 }

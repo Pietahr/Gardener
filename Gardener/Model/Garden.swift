@@ -50,6 +50,16 @@ class Garden {
     func plants(for type: Plant.PlantType) -> [Plant] {
         return plants.filter{$0.plantType == type}
     }
+    
+    func tasksForMonth(for monthNr: Int, done: Bool) -> [Task]{
+        
+        var newTasks: [Task] = []
+    
+        for task in tasks(done: done){
+                if monthNr == task.monthForTask(){
+                    newTasks.append(task)
+                }
+        }
+        return newTasks
+    }
 }
-
-

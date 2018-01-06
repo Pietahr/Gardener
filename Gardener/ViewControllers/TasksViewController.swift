@@ -23,25 +23,23 @@ extension TasksViewController: UITableViewDelegate {
 extension TasksViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-            return Task.TaskType.values.count
+        //number of months
+        return 12
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let type = Task.TaskType.values[section]
-        if(!history){
-            return garden.currentPlantTasksByType(for: type).count
-        }
-        return garden.plantTasksDoneByType(for: type).count
+            return garden.tasksForMonth(for: section+1, done: history).count
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let dateformatter = DateFormatter()
+        dateformatter.dateStyle = .long
+        return "\(dateformatter.monthSymbols[section])"
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath) as! TaskCell
-        let type = Task.TaskType.values[indexPath.section]
-        if (!history){
-            cell.task = garden.currentPlantTasksByType(for: type)[indexPath.row]
-        } else {
-            cell.task = garden.plantTasksDoneByType(for: type)[indexPath.row]
-        }
+        cell.task = garden.tasksForMonth(for: indexPath.section+1, done: history)[indexPath.row]
         return cell
     }
 }
