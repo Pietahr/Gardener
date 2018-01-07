@@ -1,10 +1,14 @@
 import Foundation
+import MapKit
 
 class Garden {
     
     var ownerName: String
     var location: String
     var plants: [Plant] = []
+    
+    var lat: CLLocationDegrees!
+    var long: CLLocationDegrees!
     
     init(ownerName: String, location: String) {
         self.ownerName = ownerName
