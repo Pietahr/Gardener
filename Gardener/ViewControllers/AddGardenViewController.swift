@@ -1,6 +1,5 @@
 import UIKit
 import MapKit
-import CoreLocation
 
 class AddGardenViewController: UITableViewController, UISearchBarDelegate   {
 
