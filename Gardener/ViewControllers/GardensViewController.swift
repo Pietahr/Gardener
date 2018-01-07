@@ -112,10 +112,7 @@ class GardensViewController: UIViewController {
 
 }
 
-/**
- Extensions can add new initializers to existing types. This enables you to extend other types to accept your own custom types as initializer parameters, or to provide additional initialization options that were not included as part of the type’s original implementation.
- */
-// Source: Tasks on Chamilo
+//Source: Tasks on Chamilo
 extension GardensViewController: UITableViewDelegate {
     // voor elke rij, welke swipe action moet ik tonen
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {

@@ -6,7 +6,7 @@ class TaskCell: UITableViewCell {
 
     @IBOutlet weak var plantNameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var typeLabel: TypeLabel!
+    @IBOutlet weak var typeLabel: UILabel!
     @IBOutlet weak var checkBox: BEMCheckBox!
     
     var task: Task! {
