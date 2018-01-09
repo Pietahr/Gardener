@@ -678,6 +678,7 @@
                 <splitViewController id="TaT-Hd-S6m" sceneMemberID="viewController">
                     <connections>
                         <segue destination="TXd-VE-XmM" kind="relationship" relationship="masterViewController" id="Beb-Gi-Tk4"/>
+                        <segue destination="TNL-WF-Ot0" kind="relationship" relationship="detailViewController" id="469-JD-tuy"/>
                     </connections>
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P23-DO-IYh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -692,8 +693,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is the detail view" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dDJ-KH-Mld">
-                                <rect key="frame" x="105.5" y="323" width="164" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select garden" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dDJ-KH-Mld">
+                                <rect key="frame" x="134" y="323" width="107" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
