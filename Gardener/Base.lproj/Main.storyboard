@@ -47,7 +47,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="addrLabel" destination="QTH-A2-shk" id="Ygc-rU-rKB"/>
-                                            <segue destination="8F7-rm-B1V" kind="presentation" identifier="showTasks" id="ivD-lp-51E"/>
+                                            <segue destination="8F7-rm-B1V" kind="showDetail" identifier="showTasks" id="ivD-lp-51E"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
